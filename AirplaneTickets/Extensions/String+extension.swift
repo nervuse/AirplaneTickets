@@ -9,13 +9,18 @@ import UIKit
 
 extension String {
 
-    func toDate(withFormat format: String = "yyyy-MM-dd'T'HH:mm:ssZ") -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(identifier: "UTC")
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        dateFormatter.dateFormat = format
-        let date = dateFormatter.date(from: self)
-        return date
+    func toDate(withFormat format: String) -> String? {
+        let inFormatter = ISO8601DateFormatter()
+        if let date = inFormatter.date(from: format) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(identifier: "UTC")
+            dateFormatter.calendar = Calendar(identifier: .gregorian)
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            dateFormatter.locale = Locale(identifier: "ru_RU_POSIX")
+            return dateFormatter.string(from: date)
+        }
+
+        return nil
     }
 }
 

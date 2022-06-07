@@ -10,7 +10,7 @@ import UIKit
 class NetworkDataFetcher {
     
     let networkService = NetworkService()
-
+    
     func fetchTicket(urlString: String, response: @escaping (Travel?) -> Void) {
         networkService.request(urlString: urlString) { result in
             switch result {

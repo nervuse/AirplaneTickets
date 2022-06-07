@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F338E72C284E12D7008EAAA9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338E72B284E12D7008EAAA9 /* DetailView.swift */; };
 		F338E72E284E5444008EAAA9 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338E72D284E5444008EAAA9 /* DetailTableViewCell.swift */; };
 		F338E730284E555D008EAAA9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338E72F284E555D008EAAA9 /* DetailsViewController.swift */; };
 		F36486E32849FD5D00610CF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36486E22849FD5D00610CF0 /* AppDelegate.swift */; };
@@ -17,16 +16,13 @@
 		F36486F72849FE0700610CF0 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36486F62849FE0700610CF0 /* Travel.swift */; };
 		F36486FB2849FF1E00610CF0 /* FlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36486FA2849FF1E00610CF0 /* FlyTableViewCell.swift */; };
 		F36486FD284A023200610CF0 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36486FC284A023200610CF0 /* UIColor+extension.swift */; };
-		F3648703284A030500610CF0 /* Setupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3648702284A030500610CF0 /* Setupable.swift */; };
 		F3648706284A03CB00610CF0 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3648705284A03CB00610CF0 /* TravelViewController.swift */; };
-		F3648708284A04E400610CF0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3648707284A04E400610CF0 /* DetailViewController.swift */; };
 		F364870A284A078200610CF0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3648709284A078200610CF0 /* NetworkService.swift */; };
 		F364870D284A0F3E00610CF0 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F364870C284A0F3E00610CF0 /* NetworkDataFetcher.swift */; };
 		F364870F284A129F00610CF0 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F364870E284A129F00610CF0 /* String+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F338E72B284E12D7008EAAA9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F338E72D284E5444008EAAA9 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		F338E72F284E555D008EAAA9 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F36486DF2849FD5D00610CF0 /* AirplaneTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirplaneTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,9 +34,7 @@
 		F36486F62849FE0700610CF0 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		F36486FA2849FF1E00610CF0 /* FlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyTableViewCell.swift; sourceTree = "<group>"; };
 		F36486FC284A023200610CF0 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
-		F3648702284A030500610CF0 /* Setupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setupable.swift; sourceTree = "<group>"; };
 		F3648705284A03CB00610CF0 /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
-		F3648707284A04E400610CF0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F3648709284A078200610CF0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F364870C284A0F3E00610CF0 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		F364870E284A129F00610CF0 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
@@ -79,7 +73,6 @@
 				F36486E22849FD5D00610CF0 /* AppDelegate.swift */,
 				F36486E42849FD5D00610CF0 /* SceneDelegate.swift */,
 				F364870B284A0F1F00610CF0 /* Networking */,
-				F3648704284A032F00610CF0 /* Protocols */,
 				F36486FE284A023A00610CF0 /* Models */,
 				F36486FF284A024400610CF0 /* ViewControllers */,
 				F3648700284A024F00610CF0 /* Cells */,
@@ -87,9 +80,6 @@
 				F36486EB2849FD6100610CF0 /* Assets.xcassets */,
 				F36486ED2849FD6100610CF0 /* LaunchScreen.storyboard */,
 				F36486F02849FD6100610CF0 /* Info.plist */,
-				F338E72B284E12D7008EAAA9 /* DetailView.swift */,
-				F338E72D284E5444008EAAA9 /* DetailTableViewCell.swift */,
-				F338E72F284E555D008EAAA9 /* DetailsViewController.swift */,
 			);
 			path = AirplaneTickets;
 			sourceTree = "<group>";
@@ -106,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				F3648705284A03CB00610CF0 /* TravelViewController.swift */,
-				F3648707284A04E400610CF0 /* DetailViewController.swift */,
+				F338E72F284E555D008EAAA9 /* DetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -115,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				F36486FA2849FF1E00610CF0 /* FlyTableViewCell.swift */,
+				F338E72D284E5444008EAAA9 /* DetailTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -126,14 +117,6 @@
 				F364870E284A129F00610CF0 /* String+extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		F3648704284A032F00610CF0 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				F3648702284A030500610CF0 /* Setupable.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F364870B284A0F1F00610CF0 /* Networking */ = {
@@ -222,13 +205,10 @@
 				F36486FD284A023200610CF0 /* UIColor+extension.swift in Sources */,
 				F364870D284A0F3E00610CF0 /* NetworkDataFetcher.swift in Sources */,
 				F364870F284A129F00610CF0 /* String+extension.swift in Sources */,
-				F338E72C284E12D7008EAAA9 /* DetailView.swift in Sources */,
 				F364870A284A078200610CF0 /* NetworkService.swift in Sources */,
-				F3648703284A030500610CF0 /* Setupable.swift in Sources */,
 				F36486FB2849FF1E00610CF0 /* FlyTableViewCell.swift in Sources */,
 				F338E730284E555D008EAAA9 /* DetailsViewController.swift in Sources */,
 				F36486E52849FD5D00610CF0 /* SceneDelegate.swift in Sources */,
-				F3648708284A04E400610CF0 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
