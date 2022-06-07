@@ -23,8 +23,8 @@ class TravelViewController: UIViewController {
         tableView.estimatedRowHeight = 44
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
-        tableView.register(FlyTableViewCell.self, forCellReuseIdentifier: "ArticleCell")
+     //   tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
+        tableView.register(FlyTableViewCell.self, forCellReuseIdentifier: "FlyCell")
         tableView.backgroundColor = UIColor(hexString: "CB11AB")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -101,9 +101,9 @@ extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as? FlyTableViewCell else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath)
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FlyCell", for: indexPath) as? FlyTableViewCell else {
+           // let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath)
+            return UITableViewCell()
         }
 
         let city = travel[indexPath.row]
@@ -118,11 +118,17 @@ extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
+        
 
-        let detailViewController = DetailViewController()
-    //    present(detailViewController, animated: true)
-        self.navigationController?.show(detailViewController, sender: nil)
+
+//        let detailViewController = DetailViewController()
+//    //    present(detailViewController, animated: true)
+//        self.navigationController?.show(detailViewController, sender: nil)
+
+
+    let detailsViewController = DetailsViewController()
+        detailsViewController.city = travel[indexPath.row]
+        navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }

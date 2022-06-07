@@ -10,13 +10,13 @@ import UIKit
 
 class FlyTableViewCell: UITableViewCell {
 
-    struct ViewModel: ViewModelProtocol {
-        let startCity: String
-        let endCity: String
-        let startDate: String
-        let endDate: String
-        let price: Int
-    }
+//    struct ViewModel: ViewModelProtocol {
+//        let startCity: String
+//        let endCity: String
+//        let startDate: String
+//        let endDate: String
+//        let price: Int
+//    }
 
     private lazy var backView: UIView = {
         let view = UIView()

@@ -1,5 +1,5 @@
 //
-//  DetailView.swift
+//  DetailTableViewCell.swift
 //  AirplaneTickets
 //
 //  Created by elena on 06.06.2022.
@@ -7,23 +7,19 @@
 
 import UIKit
 
-//protocol DetailViewDelegate : AnyObject {
-////    func buttonTapped()
-//}
+class DetailTableViewCell: UITableViewCell {
 
-class DetailView: UIView {
-
-//    weak var delegate: DetailViewDelegate?
-//
-//    private lazy var closeButtion: UIButton = {
-//        let v = UIButton()
-//        v.translatesAutoresizingMaskIntoConstraints = false
-//        v.setTitle("X", for: .normal)
-//        v.setTitleColor(.white, for: .normal)
-//        v.addTarget(self, action: #selector(didTapCloseButton(sender:)), for: .touchUpInside)
-//
-//        return v
-//    }()
+    private lazy var backView: UIView = {
+        let view = UIView()
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 10
+        view.layer.maskedCorners = [
+            .layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner
+        ]
+        view.backgroundColor = UIColor(hexString: "990099")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -53,10 +49,10 @@ class DetailView: UIView {
         return stackView
     }()
 
-    private lazy var startCityLabel: UILabel = {
+    lazy var startCityLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
-   //     label.text = "Москва"
+     //   label.text = "Москва"
         //     label.numberOfLines = 0
         label.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
         label.textColor = .white
@@ -65,7 +61,7 @@ class DetailView: UIView {
         return label
     }()
 
-    private lazy var endCityLabel: UILabel = {
+    lazy var endCityLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
     //    label.text = "Санкт-Питербург"
@@ -78,7 +74,7 @@ class DetailView: UIView {
         return label
     }()
 
-    private lazy var flyImage: UIImageView = {
+    lazy var flyImage: UIImageView = {
         let picture = UIImage(named: "plane2")
         let image = UIImageView(image: picture)
         image.clipsToBounds = true
@@ -89,10 +85,10 @@ class DetailView: UIView {
         return image
     }()
 
-    private lazy var startDateTitle: UILabel = {
+    lazy var startDateTitle: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
-  //      label.text = "Дата отправления: 11.12.12"
+    //    label.text = "Дата отправления: 11.12.12"
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = .black
         label.setContentCompressionResistancePriority(UILayoutPriority(250), for: .horizontal)
@@ -101,10 +97,10 @@ class DetailView: UIView {
     }()
 
 
-    private lazy var endDateTitle: UILabel = {
+    lazy var endDateTitle: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
-   //     label.text = "Дата возвращения: 14.12.12"
+    //    label.text = "Дата возвращения: 14.12.12"
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = .black
         label.setContentCompressionResistancePriority(UILayoutPriority(250), for: .horizontal)
@@ -122,7 +118,7 @@ class DetailView: UIView {
     }()
 
 
-    private lazy var priceLabel: UILabel = {
+    lazy var priceLabel: UILabel = {
         let label = UILabel()
         //    label.numberOfLines = 0
     //    label.text = "Price: 2009"
@@ -157,17 +153,26 @@ class DetailView: UIView {
     //        return image
     //    }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupView()
-
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.startCityLabel.text = nil
+        self.endCityLabel.text = nil
+        self.startDateTitle.text = nil
+        self.endDateTitle.text = nil
+        self.priceLabel.text = nil
+    }
+
+
+    
     @objc private func tapShowLikeInButton(_ sender: UIButton) {
 
         let button = sender
@@ -186,8 +191,12 @@ class DetailView: UIView {
 //    }
 
     private func setupView() {
+        self.contentView.backgroundColor = UIColor(hexString: "CB11AB")
+
+        self.contentView.addSubview(self.backView)
+        self.backView.addSubview(self.stackView)
 //        self.addSubview(closeButtion)
-        self.addSubview(self.stackView)
+     // self.addSubview(self.stackView)
         self.stackView.addArrangedSubview(stackViewCity)
         self.stackView.addArrangedSubview(stackViewDate)
         self.stackView.addArrangedSubview(stackViewInfo)
@@ -203,18 +212,24 @@ class DetailView: UIView {
         //        self.stackViewInfo.addArrangedSubview(self.likeImage)
 
 
+        let topBackConstraint = self.backView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10)
+        let leadingBackConstraint = self.backView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10)
+        let trailingBackConstraint = self.backView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10)
+        let bottomBackConstraint = self.backView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10)
+        let height = self.backView.heightAnchor.constraint(equalToConstant: 200)
 
         let topConstraint = self.stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10)
-        let leadingConstraint = self.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
-        let trailingConstraint = self.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        let leadingConstraint = self.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20)
+        let trailingConstraint = self.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         let bottomConstraint = self.stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
+
 
 //        let topCloseButtonConstraint = self.closeButtion.topAnchor.constraint(equalTo: self.topAnchor, constant: -16)
 //        let trailingCloseButtonConstraint = self.closeButtion.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
 //        let widthCloseButtonConstraint = self.closeButtion.widthAnchor.constraint(equalToConstant: 40)
 //        let heightCloseButtonConstraint = self.closeButtion.heightAnchor.constraint(equalToConstant: 40)
 
-        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint, bottomConstraint])
+        NSLayoutConstraint.activate([height, topBackConstraint, leadingBackConstraint, trailingBackConstraint, bottomBackConstraint, topConstraint, leadingConstraint, trailingConstraint, bottomConstraint])
 
     }
 

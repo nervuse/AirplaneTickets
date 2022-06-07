@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F338E72C284E12D7008EAAA9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338E72B284E12D7008EAAA9 /* DetailView.swift */; };
+		F338E72E284E5444008EAAA9 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338E72D284E5444008EAAA9 /* DetailTableViewCell.swift */; };
+		F338E730284E555D008EAAA9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338E72F284E555D008EAAA9 /* DetailsViewController.swift */; };
 		F36486E32849FD5D00610CF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36486E22849FD5D00610CF0 /* AppDelegate.swift */; };
 		F36486E52849FD5D00610CF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36486E42849FD5D00610CF0 /* SceneDelegate.swift */; };
 		F36486EC2849FD6100610CF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36486EB2849FD6100610CF0 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		F338E72B284E12D7008EAAA9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		F338E72D284E5444008EAAA9 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		F338E72F284E555D008EAAA9 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F36486DF2849FD5D00610CF0 /* AirplaneTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirplaneTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36486E22849FD5D00610CF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36486E42849FD5D00610CF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				F36486ED2849FD6100610CF0 /* LaunchScreen.storyboard */,
 				F36486F02849FD6100610CF0 /* Info.plist */,
 				F338E72B284E12D7008EAAA9 /* DetailView.swift */,
+				F338E72D284E5444008EAAA9 /* DetailTableViewCell.swift */,
+				F338E72F284E555D008EAAA9 /* DetailsViewController.swift */,
 			);
 			path = AirplaneTickets;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 				F36486F72849FE0700610CF0 /* Travel.swift in Sources */,
 				F3648706284A03CB00610CF0 /* TravelViewController.swift in Sources */,
 				F36486E32849FD5D00610CF0 /* AppDelegate.swift in Sources */,
+				F338E72E284E5444008EAAA9 /* DetailTableViewCell.swift in Sources */,
 				F36486FD284A023200610CF0 /* UIColor+extension.swift in Sources */,
 				F364870D284A0F3E00610CF0 /* NetworkDataFetcher.swift in Sources */,
 				F364870F284A129F00610CF0 /* String+extension.swift in Sources */,
@@ -219,6 +226,7 @@
 				F364870A284A078200610CF0 /* NetworkService.swift in Sources */,
 				F3648703284A030500610CF0 /* Setupable.swift in Sources */,
 				F36486FB2849FF1E00610CF0 /* FlyTableViewCell.swift in Sources */,
+				F338E730284E555D008EAAA9 /* DetailsViewController.swift in Sources */,
 				F36486E52849FD5D00610CF0 /* SceneDelegate.swift in Sources */,
 				F3648708284A04E400610CF0 /* DetailViewController.swift in Sources */,
 			);
