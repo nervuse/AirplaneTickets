@@ -63,7 +63,7 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.startCityLabel.text = city?.startCity
         cell.endCityLabel.text = city?.endCity
-        cell.priceLabel.text = "Price: " + "\(city?.price ?? 0)"
+        cell.priceLabel.text = "Стоимость " + "\(city?.price ?? 0)"
         
         let startDate = city?.startDate
         let endDate = city?.endDate

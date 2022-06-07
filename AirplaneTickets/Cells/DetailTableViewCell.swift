@@ -151,6 +151,24 @@ class DetailTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+
+    private lazy var tapButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
+
+        button.layer.borderWidth = 2.0
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.cornerRadius = 12
+        button.layer.shadowOffset = CGSize(width: 4.0, height: 4.0)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.8
+        button.backgroundColor = UIColor(hexString: "4B7BE5").withAlphaComponent(0.3)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Купить", for: .normal)
+        return button
+    }()
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -193,6 +211,7 @@ class DetailTableViewCell: UITableViewCell {
         self.stackView.addArrangedSubview(self.stackViewDate)
         self.stackView.addArrangedSubview(self.stackViewInfo)
         self.stackView.addArrangedSubview(self.descriptionLabel)
+        self.stackView.addArrangedSubview(self.tapButton)
         
         self.stackViewCity.addArrangedSubview(self.startCityLabel)
         self.stackViewCity.addArrangedSubview(self.flyImage)
@@ -207,14 +226,16 @@ class DetailTableViewCell: UITableViewCell {
         let leadingBackConstraint = self.backView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10)
         let trailingBackConstraint = self.backView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10)
         let bottomBackConstraint = self.backView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10)
-        let height = self.backView.heightAnchor.constraint(equalToConstant: 400)
+        let height = self.backView.heightAnchor.constraint(equalToConstant: 450)
+
+        let bottomTapButtonConstraint = self.tapButton.bottomAnchor.constraint(equalTo: self.backView.bottomAnchor, constant: -10)
         
         let topConstraint = self.stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10)
         let leadingConstraint = self.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20)
         let trailingConstraint = self.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         let bottomConstraint = self.stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
         
-        NSLayoutConstraint.activate([height, topBackConstraint, leadingBackConstraint, trailingBackConstraint, bottomBackConstraint, topConstraint, leadingConstraint, trailingConstraint, bottomConstraint])
+        NSLayoutConstraint.activate([height, topBackConstraint, leadingBackConstraint, trailingBackConstraint, bottomBackConstraint, bottomTapButtonConstraint, topConstraint, leadingConstraint, trailingConstraint, bottomConstraint])
     }
 }
 

@@ -105,7 +105,7 @@ extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
         let city = travel[indexPath.row]
         cell.startCityLabel.text = city.startCity
         cell.endCityLabel.text = city.endCity
-        cell.priceLabel.text = "Price: " + String(city.price)
+        cell.priceLabel.text = String(city.price) + " ₽"
         
         let startDate = city.startDate
         let endDate = city.endDate
