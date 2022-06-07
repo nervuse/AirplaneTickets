@@ -16,7 +16,7 @@ class TravelViewController: UIViewController {
     let networkDataFetcher = NetworkDataFetcher()
     
     var travel: [City] = []
-    
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = UITableView.automaticDimension
@@ -117,7 +117,7 @@ extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
         if let date = endDate.toDate(withFormat: endDate) {
             cell.endDateTitle.text = date
         }
-        
+
         return cell
     }
     
@@ -128,3 +128,22 @@ extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
         navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
+
+//extension TravelViewController: FlyTableViewCellProtocol {
+//    func tapLikesLabelDelegate(_ sender: UIButton) {
+//        let button = sender
+//
+//        if button.isSelected == true {
+//            button.setImage(UIImage(named: "heart"), for: .normal)
+//            button.isSelected = false
+//        } else {
+//            button.setImage(UIImage(named: "blackheart"), for: .normal)
+//            button.isSelected = true
+//        }
+//    }
+//}
+
+
+    
+
+

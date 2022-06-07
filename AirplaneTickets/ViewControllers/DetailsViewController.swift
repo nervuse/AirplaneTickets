@@ -7,7 +7,13 @@
 
 import UIKit
 
+//protocol DetailsViewControllerProtocol: AnyObject {
+//    func tapLikeButton(_ sender: UIButton)
+//}
+
 class DetailsViewController: UIViewController {
+
+//    weak var delegate: DetailsViewControllerProtocol?
     
     var city: City?
     
@@ -44,7 +50,6 @@ class DetailsViewController: UIViewController {
     }
 }
 
-
 extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,7 +75,15 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
         if let date = endDate?.toDate(withFormat: endDate ?? "") {
             cell.endDateTitle.text = "Дата возвращения: " + "\(date)"
         }
-        
+
         return cell
     }
 }
+
+
+//extension DetailsViewController: DetailTableViewCellProtocol {
+//    func tapLikeButton(_ sender: UIButton) {
+//        delegate?.tapLikeButton(sender)
+//    }
+//}
+

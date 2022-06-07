@@ -20,6 +20,8 @@ struct City: Decodable {
     var endDate: String
     var price: Int
     
+    
+    
     enum CodingKeys: String, CodingKey {
         case startCity, endCity, startDate, endDate, price
     }

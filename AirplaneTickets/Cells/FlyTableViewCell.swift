@@ -8,8 +8,14 @@
 
 import UIKit
 
+//protocol FlyTableViewCellProtocol: AnyObject {
+//    func tapLikeButton(_ sender: UIButton)
+//}
+
 class FlyTableViewCell: UITableViewCell {
-    
+
+ //   weak var delegate: FlyTableViewCellDelegate?
+
     private lazy var backView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -123,6 +129,7 @@ class FlyTableViewCell: UITableViewCell {
     private lazy var likeButton: UIButton = {
         let images = UIImage(named: "heart")
         let button = UIButton()
+
         button.setImage(images, for: .normal)
         button.clipsToBounds = true
         button.setContentCompressionResistancePriority(UILayoutPriority(500), for: .horizontal)
@@ -130,16 +137,6 @@ class FlyTableViewCell: UITableViewCell {
         button.addTarget(self, action: #selector(tapShowLikeInButton), for: .touchUpInside)
         return button
     }()
-    
-    //    private lazy var likeImage: UIImageView = {
-    //        let picture = UIImage(named: "heart")
-    //        let image = UIImageView(image: picture)
-    //        image.contentMode = .scaleAspectFit
-    //        image.clipsToBounds = true
-    //        image.setContentCompressionResistancePriority(UILayoutPriority(500), for: .horizontal)
-    //        image.translatesAutoresizingMaskIntoConstraints = false
-    //        return image
-    //    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -162,7 +159,7 @@ class FlyTableViewCell: UITableViewCell {
     @objc private func tapShowLikeInButton(_ sender: UIButton) {
         
         let button = sender
-        
+
         if button.isSelected == true {
             button.setImage(UIImage(named: "heart"), for: .normal)
             button.isSelected = false
@@ -219,3 +216,5 @@ class FlyTableViewCell: UITableViewCell {
         ]
     }
 }
+
+
